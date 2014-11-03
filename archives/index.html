@@ -73,34 +73,43 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/03/1/">使用GITHUB&amp;HEXO中遇到的问题</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="title:_ʹ��GITHUB&amp;HEXO���򵽵�����">title: ʹ��GITHUB&amp;HEXO���򵽵�����</h2>
-<h1 id="ʹ��GITHUB&amp;HEXO���򵽵�����">ʹ��GITHUB&amp;HEXO���򵽵�����</h1>
-<p>��ǩ���ո��ָ𣩣� blog 1 ʹ��GITHUB&amp;HEXO���򵽵�����</p>
-<p>����ǰ,ѧ�����������������ص�GITHUB����,���ҵ�֪�ҽ�ӵ�����Լ��Ĳ���ʱ,��������������ƽ��.��Ȼ,���鲻����ô˳��,��������.<br>           <a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external"><em>�ȸ���hexo�̳�����</em></a></p>
-<p>1.��װhexoʱ<br>�����⴦����Git Bush<br>�ڳ�����������</p>
+        <h1 id="使用GITHUB&amp;HEXO中遇到的问题">使用GITHUB&amp;HEXO中遇到的问题</h1>
+<p>标签（空格分隔）： blog 1 使用GITHUB&amp;HEXO中遇到的问题</p>
+<p>不久前,学长带领我们走向神秘的GITHUB世界,当我得知我将拥有我自己的博客时,激动的心情难以平复.当然,事情不会那么顺利,问题出现.<br>           <a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external"><em>先给个hexo教程链接</em></a></p>
+<p>1.安装hexo时<br>在任意处打开Git Bush<br>在程序框内输入</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>npm install -g hexo</div></pre></td></tr></table></figure>
 
-<p>��ʾ</p>
+<p>提示</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">commend <span class="keyword">not</span> find</div></pre></td></tr></table></figure>
 
-<p>����֮���Ľ��򷽷��� <code>�ڰ�װ��npm���ļ����ڵ㿪Git Bush</code></p>
-<p>2.����,�༭_config.ymlʱ</p>
-<p>����,�༭_config.yml(��H:\hexo��)�����ڲ���ʱ��Ҫ��������zippera�����������˺�����</p>
+<p>试验之后的解决方法是 <code>在安装有npm的文件夹内点开Git Bush</code></p>
+<p>2.部署,编辑_config.yml时</p>
+<p>部署,编辑_config.yml(在H:\hexo下)。你在部署时，要把下面的zippera都换成你的账号名。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="class"><span class="keyword">type</span>: <span class="title">github</span></span></div><div class="line">  repository: https:<span class="comment">//github.com/zippera/zippera.github.io.git</span></div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 
-<p><em>�ر���ʾ</em><code>https://github.com/zippera/zippera.github.io.git</code>������Ҫ�ĳ�������GitHub��ע���Ĳֿ���ַ��ͬ</p>
-<p>3.Hexo Deploy ʱ<br>�ڳ�����������</p>
+<p><em>特别提示</em><code>https://github.com/zippera/zippera.github.io.git</code>这段需要改成与你在GitHub中注册的仓库网址相同</p>
+<p>3.Hexo Deploy 时<br>在程序框内输入</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo d</div></pre></td></tr></table></figure>
 
-<p>��ʾ</p>
+<p>提示</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">src refspec master does <span class="keyword">not</span> match <span class="type">any</span></div></pre></td></tr></table></figure>
 
-<p>���Ұٶ�ǧ��������<br>���򷽷�</p>
+<p>在我百度千遍后解决<br>解决方法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git <span class="keyword">add</span> README</div><div class="line">git commit -m <span class="string">"Initial commit."</span></div><div class="line">git remote <span class="keyword">add</span> origin git@github.com:username/your-project.git</div><div class="line">git <span class="keyword">push</span> origin master</div></pre></td></tr></table></figure>
 
-<p><em>����</em><br>��������<code>git remote add origin git@github.com:username/your-project.git</code>��<br>������<code>please tell me who yuo are</code><br>��ʱ������ʾ�����������������뼴�ɽ�������</p>
+<p><em>其中</em><br>当你输入<code>git remote add origin git@github.com:username/your-project.git</code>后<br>会跳出<code>please tell me who yuo are</code><br>这时候按提示输入你的邮箱和密码即可解决问题</p>
 
       
     </div>
@@ -196,7 +205,7 @@
       <ul>
         
           <li>
-            <a href="/2014/11/03/1/">(no title)</a>
+            <a href="/2014/11/03/1/">使用GITHUB&amp;HEXO中遇到的问题</a>
           </li>
         
           <li>
